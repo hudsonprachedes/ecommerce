@@ -239,8 +239,8 @@ $app->post("/checkout", function(){
 
 	$cart = Cart::getFromSession();
 
-	$cart->getCalculateTotal();
-
+	$totals = $cart->getCalculateTotal();
+	
 	$order = new Order();
 
 	$order->setData([
@@ -248,10 +248,16 @@ $app->post("/checkout", function(){
 		'idaddress'=>$address->getidaddress(),
 		'iduser'=>$user->getiduser(),
 		'idstatus'=>OrderStatus::EM_ABERTO,
-		'vltotal'=>$cart->getvltotal()
+		'vltotal'=>$totals['vlprice'] + $cart->getvlfright()
 	]);
 
 	$order->save();
+
+	header ("Location: /order/".$order->getidorder());
+
+	});
+
+/*	$order->save();
 
 	switch ((int)$_POST['payment-method']) {
 
@@ -319,7 +325,7 @@ $app->get("/order/:idorder/paypal", function($idorder){
 	]);
 
 
-});
+});*/
 
 $app->get("/login", function(){
 

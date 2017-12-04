@@ -107,9 +107,9 @@ $altura = 50 ;
 
 //Guarda inicial
 ?><img src=imagens/p.png width=<?php echo $fino?> height=<?php echo $altura?> border=0><img 
-src=imagens/b.png width=<?php echo $fino?> height=<?php echo $altura?> border=0><img 
-src=imagens/p.png width=<?php echo $fino?> height=<?php echo $altura?> border=0><img 
-src=imagens/b.png width=<?php echo $fino?> height=<?php echo $altura?> border=0><img 
+src=/res/boletophp/imagens/b.png width=<?php echo $fino?> height=<?php echo $altura?> border=0><img 
+src=/res/boletophp/imagens/p.png width=<?php echo $fino?> height=<?php echo $altura?> border=0><img 
+src=/res/boletophp/imagens/b.png width=<?php echo $fino?> height=<?php echo $altura?> border=0><img 
 <?php
 $texto = $valor ;
 if((strlen($texto) % 2) <> 0){
